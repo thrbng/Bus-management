@@ -1,2 +1,2 @@
-# Gestion-du-bus
-Gestion du bus en langague C
+# Bus-management
+Bus management in C language
