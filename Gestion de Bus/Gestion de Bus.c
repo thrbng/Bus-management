@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-//mot de pass est admin
+//password is 'admin'
 char pass[10]="admin";
 typedef char nom[10];
 typedef struct bus{
@@ -11,7 +11,7 @@ typedef struct bus{
 	nom placesnom[10];
 }bus;
 
-//procedure pour afficher le menu
+//procedure to display the menu
 void mainmenu(){
 	system("cls");
 	printf("\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd BONJOUR \xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\n\n\n");
@@ -23,12 +23,12 @@ void mainmenu(){
 	printf("\n\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\n\n\xcd\xcd\xcd\xcd\xcd\xcd:");
 }
 
-//procedure pour retoure au menu
+//procedure to return to the menu
 void retourfunc(){
 	mainmenu();
 }
 
-//procedure pour quitter le program console
+//procedure to exit the console program
 void quitter(){
 	system("cls");
 	printf("\n*\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd\xcd*\n");
@@ -38,14 +38,14 @@ void quitter(){
 	exit(0);
 }
 
-//procedure pour installer les informations du bus
+//procedure for importing buses information
 void installer_informations(bus *b,FILE *f){
 	char bb[100];
 	fgets(bb,100,f);
 	strcpy(b->info,bb);
 }
 
-//procedure pour le mot de pass
+//procedure for the password
 void password(){
     char psw[10];
     int temp=0;
@@ -63,7 +63,7 @@ void password(){
     system("cls");
 }
 
-//procedure pour reserver les bus
+//procedure for booking buses
 void reserver(bus *b,int *a,nom *n){
 	do{
 		printf("\nDonner la place que vous voullez:");
@@ -79,7 +79,7 @@ void reserver(bus *b,int *a,nom *n){
 	else printf("LA PLACE EST DEJA RESERVER!!!!");
 }
 
-//anuller la resarvation
+//cancel reservation
 void nullreserver(bus *b,int *a){
 	printf("\nDonner la place que vous voullez annuler:");
 	scanf("%d",a);
@@ -89,7 +89,7 @@ void nullreserver(bus *b,int *a){
 	}
 }
 
-//procedure pour afficher les reservations
+//procedure for displaying reservations
 void informations(bus b1,bus b2,bus b3,bus b4,bus b5){
 	int i;
 	int a=0;
@@ -120,7 +120,7 @@ void informations(bus b1,bus b2,bus b3,bus b4,bus b5){
 	if(a==0)printf("aucune reservation a ete subit");
 }
 
-//procedure pour afficher les bus disponibles
+//procedure to display available buses
 void Bus_disponibles(bus b,int a){
 	printf("BUS 0%d)- %s\n",a,b.info);
 }
@@ -132,7 +132,7 @@ void Bus_disponibles(bus b,int a){
 int main(){
 	int i,bs;
 	bus b1,b2,b3,b4,b5;
-	//utiliser les fichiers pour importer les informations des bus
+	//use files to import buses information
 	FILE *f1,*f2,*f3,*f4,*f5;
 	f1=fopen("bus01.txt","r");
 	f2=fopen("bus02.txt","r");
